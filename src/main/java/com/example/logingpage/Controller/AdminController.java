@@ -13,15 +13,21 @@ public class AdminController {
     AdminService adminService;
 
 
-
-
-
     @PostMapping("/add")
-    public String addNewAdmin (@RequestParam ("adminId") int adminId,
-                      @RequestParam ("name")String name,
-                      @RequestParam ("password")String password){
-    return adminService.addAdmin( adminId,name,password);
+    public Admin createAdmin(@RequestBody Admin admin) {
+        return adminService.createAdmin(admin);
     }
+
+
+
+
+
+//    @PostMapping("/add")
+//    public String addNewAdmin (@RequestParam ("adminId") int adminId,
+//                      @RequestParam ("name")String name,
+//                      @RequestParam ("password")String password){
+//    return adminService.addAdmin( adminId,name,password);
+//    }
 
 }
 
